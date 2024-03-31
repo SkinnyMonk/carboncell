@@ -1,0 +1,29 @@
+
+.headerLogo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap:20px;
+    margin: 20px 10px 0 10px;
+    
+}
+/* Sidebar.css */
+
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+    background: rgb(27,38,28);
+    color: white;
+
+}
+
+.navLink{
+        display: 'flex'; align-items: 'center'; justify-content: 'space-between'; cursor: 'pointer'; height: '6vh'; 
+    
+}
+
