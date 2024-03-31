@@ -1,4 +1,4 @@
-import { InputAdornment, TextField } from '@mui/material';
+import { IconButton, InputAdornment, TextField } from '@mui/material';
 import { navData, accountData } from './NavLinkData';
 import SearchIcon from '@mui/icons-material/Search';
 import NavLink from '../NavLink/NavLink';
@@ -19,7 +19,10 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
                         : <img src={process.env.PUBLIC_URL + '/Image/logo.png'} alt="Carbon Cell" />
                     }
 
-                    {showMenu && <MenuIcon onClick={() => setIsSidebarOpen(!isSidebarOpen)} style={{ margin: isSidebarOpen ? '0' : 'auto' }} />}
+                    {showMenu &&
+                        <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)} style={{ margin: isSidebarOpen ? '0' : 'auto', color: 'white' }}>
+                            <MenuIcon />
+                        </IconButton>}
 
                 </div>
 
