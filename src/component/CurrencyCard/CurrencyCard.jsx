@@ -3,7 +3,7 @@ import { styled } from '@mui/system';
 
 const StyledCard = styled(Card)(({ theme }) => ({
     padding: theme.spacing(3),
-    width: '30%',
+    // width: '30%',
     height: '100%',
     backgroundColor: 'rgb(23, 23, 23)',
     color: 'white',
