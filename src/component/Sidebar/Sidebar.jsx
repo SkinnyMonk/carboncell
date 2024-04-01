@@ -1,4 +1,4 @@
-import { IconButton, InputAdornment, TextField } from '@mui/material';
+import { InputAdornment, TextField } from '@mui/material';
 import { navData, accountData } from './NavLinkData';
 import SearchIcon from '@mui/icons-material/Search';
 import NavLink from '../NavLink/NavLink';
