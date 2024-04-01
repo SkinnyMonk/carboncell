@@ -26,7 +26,7 @@ function CryptoPriceCard() {
     }
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', margin: '20px', minHeight: '200px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', margin: '20px', minHeight: '200px', flexWrap: 'wrap' }}>
             {Object.keys(priceData).map((key) => (
                 <CurrencyCard key={key} currency={priceData[key]} />
             ))}

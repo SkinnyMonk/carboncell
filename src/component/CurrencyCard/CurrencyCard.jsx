@@ -12,11 +12,12 @@ const StyledCard = styled(Card)(({ theme }) => ({
     textAlign: 'center',
     margin: theme.spacing(2),
     transition: 'transform 0.3s ease',
+    minWidth: '200px',
     '&:hover': {
         transform: 'scale(1.02)',
     },
     [theme.breakpoints.down('sm')]: {
-        width: '90%', 
+        width: '90%',
         marginBottom: theme.spacing(2),
     },
 }));
@@ -26,10 +27,10 @@ const Title = styled('h2')(({ theme }) => ({
     fontSize: '1.5rem',
     margin: '10px 0 5px',
     color: 'white',
-    height: '3.6rem', 
-    overflow: 'hidden', 
+    height: '3.6rem',
+    overflow: 'hidden',
     display: '-webkit-box',
-    '-webkit-line-clamp': 2, 
+    '-webkit-line-clamp': 2,
     '-webkit-box-orient': 'vertical',
     [theme.breakpoints.down('md')]: {
         fontSize: '1rem',
@@ -43,7 +44,7 @@ const Info = styled('p')(({ theme, isCode }) => ({
     color: isCode ? 'grey' : 'white',
     fontWeight: isCode ? 'bold' : 'normal',
     [theme.breakpoints.down('md')]: {
-        fontSize: isCode ? '1rem' : '0.7rem', 
+        fontSize: isCode ? '1rem' : '0.7rem',
     },
 }));
 

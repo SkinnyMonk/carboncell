@@ -27,10 +27,10 @@ const Header = () => {
         }
         setTimeout(() => {
             setFeedback('');
-        }, 2000);
+        }, 5000);
     };
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', height: '150px', gap: '10px', }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', height: '170px', gap: '10px', }}>
             <Button sx={{ color: 'white', margin: '20px 50px', height: '40px' }} color='secondary' variant='outlined' onClick={connectWallet}>Connect Wallet</Button>
 
             {feedback && <Collapse in={open}>
@@ -49,7 +49,7 @@ const Header = () => {
                             <CloseIcon fontSize="inherit" />
                         </IconButton>
                     }
-                    sx={{ my: '20px', mx: '50px', maxWidth: '340px' }}
+                    sx={{ my: '20px', mx: '50px', maxWidth: '60vw' }}
                 >
                     {feedback}
                 </Alert>
