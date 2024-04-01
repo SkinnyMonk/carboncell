@@ -30,8 +30,9 @@ const Header = () => {
         }, 2000);
     };
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', alignItems: 'center', height: '100px', margin: '20px', gap: '20px' }}>
-            <Button sx={{ color: 'white' }} color='secondary' variant='outlined' onClick={connectWallet}>Connect Wallet</Button>
+        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', height: '150px', gap: '10px', }}>
+            <Button sx={{ color: 'white', margin: '20px 50px', height: '40px' }} color='secondary' variant='outlined' onClick={connectWallet}>Connect Wallet</Button>
+
             {feedback && <Collapse in={open}>
                 <Alert
                     severity={isSuccess ? "success" : "error"}
@@ -48,12 +49,14 @@ const Header = () => {
                             <CloseIcon fontSize="inherit" />
                         </IconButton>
                     }
-                    sx={{ mb: 2 }}
+                    sx={{ my: '20px', mx: '50px', maxWidth: '340px' }}
                 >
                     {feedback}
                 </Alert>
             </Collapse>
+
             }
+
         </div>
     );
 };

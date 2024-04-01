@@ -2,9 +2,7 @@
 .headerLogo{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap:20px;
+    justify-content: center;
     margin: 20px 10px 0 10px;
     
 }
@@ -19,6 +17,8 @@
     transition: width 0.3s ease;
     background: rgb(27,38,28);
     color: white;
+    position: fixed;
+    z-index: 5;
 
 }
 

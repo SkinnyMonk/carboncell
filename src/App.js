@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import Header from './component/Header/Header';
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 800);
   useEffect(() => {
     const handleResize = () => {
       setIsSidebarOpen(window.innerWidth > 800);
@@ -23,11 +23,11 @@ function App() {
 
   return (
     <div className="app">
+      {/* sidebar implementation is using hover for smaller screens cause collapsing it was not very ui friendly */}
       <Grid container flexWrap={"nowrap"}>
-
         <Grid item xs
           {...(isSidebarOpen
-            ? { sm: 3.3, md: 3.05, lg: 2.9, xl: 2.5 }
+            ? { sm: 3.4, md: 3.1, lg: 2.9, xl: 2.5 }
             : { sm: 1, md: 0.5, lg: 0.5, xl: 0.5 })}
         >
           <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />

@@ -3,15 +3,38 @@ import { navData, accountData } from './NavLinkData';
 import SearchIcon from '@mui/icons-material/Search';
 import NavLink from '../NavLink/NavLink';
 import ProfileCard from '../ProfileCard/ProfileCard';
-import MenuIcon from '@mui/icons-material/Menu';
+import { useState, useEffect } from 'react';
 import './Sidebar.css';
 
 function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
 
-    const showMenu = window.innerWidth > 800;
+    const [showMenu, setShowMenu] = useState(isSidebarOpen);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setShowMenu(window.innerWidth < 800);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
-        <div id="header" className={isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}>
+        <div id="header"
+            style={{ minWidth: isSidebarOpen ? '240px' : '60px' }}
+            onMouseEnter={() => {
+                if (showMenu) {
+                    setIsSidebarOpen(true);
+                }
+            }}
+            onMouseLeave={() => {
+                if (showMenu) {
+                    setIsSidebarOpen(false);
+                }
+            }}  >
             <>
                 <div className='headerLogo'>
 
@@ -19,10 +42,7 @@ function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
                         : <img src={process.env.PUBLIC_URL + '/Image/logo.png'} alt="Carbon Cell" />
                     }
 
-                    {showMenu &&
-                        <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)} style={{ margin: isSidebarOpen ? '0' : 'auto', color: 'white' }}>
-                            <MenuIcon />
-                        </IconButton>}
+
 
                 </div>
 
